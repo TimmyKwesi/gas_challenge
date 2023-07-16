@@ -25,9 +25,10 @@ contract gasChallenge {
     //Sum of elements in the numbers array should equal 0
     function optimizedFunction() public {
       uint a = numbers.length;
-      unchecked {
-        for (uint i = 0; i < a; ++i) {
-            numbers[i] = 0;
+        for (uint i = 0; i < a;) {
+            unchecked {
+                numbers[i] = 0;
+                ++i;
         }
       }
     }
